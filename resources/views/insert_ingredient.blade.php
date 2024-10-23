@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="/insert_ingredient" method="POST">
+        <form action="{{ route('insert_ingredient.store') }}" method="POST">
             @csrf
             <div class="relative inline-block text-left w-auto">
                 <select class="rounded-lg" x-model="selected">
@@ -23,15 +23,15 @@
                     <option value="yeast">Yeast</option>
                 </select>
             </div>
-            <div x-show="selected === 'fermentables'">
+            <template x-if="selected === 'fermentables'">
                 <x-add-fermentable></x-add-fermentable>
-            </div>
-            <div x-show="selected === 'secondary'">
+            </template>
+            <template x-if="selected === 'secondary'">
                 <x-add-secondary></x-add-secondary>
-            </div>
-            <div x-show="selected === 'yeast'">
+            </template>
+            <template x-if="selected === 'yeast'">
                 <x-add-yeast></x-add-yeast>
-            </div>
+            </template>
             <div class="flex justify-end">
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Insert Ingredient</button>
             </div>
