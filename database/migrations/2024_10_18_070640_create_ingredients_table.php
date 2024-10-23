@@ -14,11 +14,9 @@ return new class extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('moisture');
-            $table->float('protein');
-            $table->float('wort_color');
-            $table->float('diastatic_power');
-            $table->float('yield_extract');
+            $table->string('type');
+            $table->string('object');
+            $table->string('description');
             $table->timestamps();
         });
     }
