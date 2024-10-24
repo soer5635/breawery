@@ -16,7 +16,7 @@ class IngredientController extends Controller
         $data = request()->except(['name', 'type', '_token', 'description']);
         $json_object = json_encode($data);
 
-        $ingredient = Ingredients::create([
+        Ingredients::create([
             'name' => request('name'),
             'type' => request('type'),
             'object' => $json_object,
