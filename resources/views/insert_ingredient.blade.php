@@ -17,7 +17,7 @@
         <form action="{{ route('insert_ingredient.store') }}" method="POST">
             @csrf
             <div class="relative inline-block text-left w-auto">
-                <select class="rounded-lg" x-model="selected">
+                <select name="type" class="rounded-lg" x-model="selected">
                     <option value="fermentables">Fermentables</option>
                     <option value="secondary">Secondary</option>
                     <option value="yeast">Yeast</option>

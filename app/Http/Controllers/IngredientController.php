@@ -11,23 +11,18 @@ class IngredientController extends Controller
     {
         $data = request()->validate([
             'name' => 'required',
-            'moisture' => 'required',
-            'protein' => 'required',
-            'wort_color' => 'required',
-            'diastatic_power' => 'required',
-            'yield_extract' => 'required'
         ]);
+
+        $data = request()->except(['name', 'type', '_token', 'description']);
+        $json_object = json_encode($data);
 
         $ingredient = Ingredients::create([
-            'name' => $data['name'],
-            'moisture' => $data['moisture'],
-            'protein' => $data['protein'],
-            'wort_color' => $data['wort_color'],
-            'diastatic_power' => $data['diastatic_power'],
-            'yield_extract' => $data['yield_extract']
+            'name' => request('name'),
+            'type' => request('type'),
+            'object' => $json_object,
+            'description' => request('description'),
+            'created_at' => now()
         ]);
-
-        dd($ingredient);
-        // return $ingredient;
+        return redirect()->back()->with('success', 'Ingredient added successfully!');
     }
 }
