@@ -25,9 +25,9 @@
             </div>
             <div class="mb-4">
                 <h3 class="text-3xl font-semibold text-gray-700 dark:text-gray-200 mt-7 mb-5">Ingredients</h3>
-                <x-dynamic-input>Fermentables</x-dynamic-input>
-                <x-dynamic-input>Secondary</x-dynamic-input>
-                <x-dynamic-input>Yeast</x-dynamic-input>
+                <x-dynamic-input :ingredients="$ingredients['fermentables'] ??[]">Fermentables</x-dynamic-input>
+                <x-dynamic-input :ingredients="$ingredients['secondary'] ??[]">Secondary</x-dynamic-input>
+                <x-dynamic-input :ingredients="$ingredients['yeast'] ??[]">Yeast</x-dynamic-input>
             </div>
             <div class="mb-4">
                 <h3 class="text-2xl font-semibold text-gray-700 dark:text-gray-200 mt-7 mb-5">Instructions</h3>

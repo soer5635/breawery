@@ -10,7 +10,12 @@
         <div class="flex flex-col items-center mb-2">
             <template x-for="(input, index) in inputs" :key="index">
                 <div class="flex w-full">
-                    <input type="text" x-model="inputs[index]" name="ingredients[]" class="w-full grow mt-4 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <select x-model="inputs[index]" name="ingredients[]" class="w-full grow mt-4 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        <option value="">Select Ingredient</option>
+                        @foreach($ingredients as $ingredient)
+                            <option value="{{ $ingredient->id }}">{{ $ingredient->name }}</option>
+                        @endforeach
+                    </select>
                     <input type="text" x-model="inputs[index]" name="amount[]" class="w-1/5 grow mt-4 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ml-4" required>
                     <template x-if="inputs.length > 1">
                         <button @click.prevent="inputs.splice(index, 1)" class="text-blue-500 flex-none mx-3 text-2xl">-</button>

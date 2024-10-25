@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
         return view('create_recipe');
     });
     Route::post('create_recipe', [RecipeController::class, 'store'])->name('create_recipe.store');
+    Route::get('create_recipe', [IngredientController::class, 'show'])->name('recipes.create');
 
     Route::get('insert_ingredient', function() {
         return view('insert_ingredient');

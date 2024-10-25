@@ -20,9 +20,16 @@ class IngredientController extends Controller
             'name' => request('name'),
             'type' => request('type'),
             'object' => $json_object,
-            'description' => request('description'),
+            'description' => request('comment'),
             'created_at' => now()
         ]);
         return redirect()->back()->with('success', 'Ingredient added successfully!');
+    }
+
+    public function show(Request $request)
+    {
+        $ingredients = Ingredients::all()->groupBy('type');
+
+        return view('create_recipe', ['ingredients' => $ingredients]);
     }
 }
