@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Recipe;
+use App\Models\Ingredients;
 
 class RecipeController extends Controller
 {
@@ -27,5 +28,12 @@ class RecipeController extends Controller
 
         dd($recipe);
         // return $recipe;
+    }
+
+    public function show(Request $request)
+    {
+        $ingredients = Ingredients::ingredientsByType();
+
+        return view('create_recipe', ['ingredients' => $ingredients]);
     }
 }

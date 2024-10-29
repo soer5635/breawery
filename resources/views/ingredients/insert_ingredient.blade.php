@@ -14,7 +14,7 @@
                 </ul>
             </div>
         @endif
-        <form action="{{ route('insert_ingredient.store') }}" method="POST">
+        <form action="/ingredients/insert_ingredient" method="POST">
             @csrf
             <div class="relative inline-block text-left w-auto">
                 <select name="type" class="rounded-lg" x-model="selected">

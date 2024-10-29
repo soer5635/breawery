@@ -25,12 +25,15 @@ Route::middleware('auth')->group(function () {
         return view('create_recipe');
     });
     Route::post('create_recipe', [RecipeController::class, 'store'])->name('create_recipe.store');
-    Route::get('create_recipe', [IngredientController::class, 'show'])->name('recipes.create');
+    Route::get('create_recipe', [RecipeController::class, 'show'])->name('recipes.create');
 
-    Route::get('insert_ingredient', function() {
-        return view('insert_ingredient');
+    Route::get('show', function() {
+        return view('ingredients');
     });
-    Route::post('insert_ingredient', [IngredientController::class, 'store'])->name('insert_ingredient.store');
+    Route::get('ingredients', [IngredientController::class, 'show'])->name('ingredients.show');
+
+    Route::post('ingredients/insert_ingredient', [IngredientController::class, 'store'])->name('ingredients.store');
+    Route::get('ingredients/insert_ingredient', [IngredientController::class, 'insertIngredient'])->name('insertIngredient');
 });
 
 require __DIR__.'/auth.php';
