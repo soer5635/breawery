@@ -14,8 +14,11 @@
                 </ul>
             </div>
         @endif
-        <form action="/ingredients/insert_ingredient" method="POST">
+        <form action="{{ $ingredient->exists ? route('ingredient.edit', $ingredient->id) : route('ingredients.insert') }}" method="POST">
             @csrf
+            @if ($ingredient->exists)
+                @method('PUT')
+            @endif
             <div class="relative inline-block text-left w-auto">
                 <select name="type" class="rounded-lg" x-model="selected">
                     <option value="fermentables">Fermentables</option>
