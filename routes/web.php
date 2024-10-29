@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
 
     Route::post('ingredients/insert_ingredient', [IngredientController::class, 'store'])->name('ingredients.store');
     Route::get('ingredients/insert_ingredient', [IngredientController::class, 'insertIngredient'])->name('insertIngredient');
+    Route::get('ingredients/{ingredient}/edit', [IngredientController::class, 'edit'])->name('edit');
 });
 
 require __DIR__.'/auth.php';

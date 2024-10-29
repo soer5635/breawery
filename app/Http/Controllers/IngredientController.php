@@ -37,5 +37,10 @@ class IngredientController extends Controller
         return view('ingredients/insert_ingredient');
     }
 
+    public function edit(Ingredients $ingredient)
+    {
+        return view('ingredients.edit', ['ingredient' => $ingredient]);
+    }
+
 
 }
