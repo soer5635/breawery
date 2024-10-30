@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::post('ingredients/insert', [IngredientController::class, 'create'])->name('ingredients.create');
     Route::get('ingredients/{ingredient}/edit', [IngredientController::class, 'edit'])->name('edit');
     Route::patch('ingredients/{ingredient}/edit', [IngredientController::class, 'update'])->name('update');
+    Route::delete('ingredients/{ingredient}', [IngredientController::class, 'destroy']);
 });
 
 require __DIR__.'/auth.php';

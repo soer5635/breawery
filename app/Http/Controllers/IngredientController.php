@@ -75,5 +75,12 @@ class IngredientController extends Controller
         return redirect()->route('ingredients.show')->with('success', 'Ingredient updated successfully!');
     }
 
+    public function destroy(Ingredients $ingredient)
+    {
+        dd($ingredient);
+        $ingredient->delete();
+        return redirect()->route('ingredients.show');
+    }
+
 
 }

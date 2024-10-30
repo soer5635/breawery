@@ -25,7 +25,7 @@
                 </select>
             </div>
             <template x-if="selected === 'fermentables'">
-                <x-add-fermentable></x-add-fermentable>
+                <x-add-fermentable :ingredient="$ingredient"></x-add-fermentable>
             </template>
             <template x-if="selected === 'secondary'">
                 <x-add-secondary></x-add-secondary>
@@ -34,7 +34,7 @@
                 <x-add-yeast></x-add-yeast>
             </template>
             <div class="flex justify-end">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Insert Ingredient</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Update Ingredient</button>
             </div>
         </form>
     </div>
