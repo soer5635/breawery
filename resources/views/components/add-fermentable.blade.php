@@ -1,4 +1,4 @@
-@php $jsonIngredientElement = json_decode($ingredient->object, true); @endphp
+@php $jsonIngredientElement = isset($ingredient->object) ? json_decode($ingredient->object, true) : null; @endphp
 <div>
 
     <h4 class="text-center font-bold w-full grow mb-2">Name of fermentable</h4>
