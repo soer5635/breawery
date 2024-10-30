@@ -15,7 +15,7 @@
                     <form method="POST" action="/ingredients/{{ $ingredient->id }}" id="delete-form">
                         @csrf
                         @method('DELETE')
-                        <button form="delete-form" class="bg-red-500 text-white p-1 rounded">
+                        <button class="bg-red-500 text-white p-1 rounded">
                             <span class="font-bold">Delete</span>
                         </button>
                     </form>

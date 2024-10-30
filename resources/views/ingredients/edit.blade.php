@@ -28,10 +28,10 @@
                 <x-add-fermentable :ingredient="$ingredient"></x-add-fermentable>
             </template>
             <template x-if="selected === 'secondary'">
-                <x-add-secondary></x-add-secondary>
+                <x-add-secondary :ingredient="$ingredient"></x-add-secondary>
             </template>
             <template x-if="selected === 'yeast'">
-                <x-add-yeast></x-add-yeast>
+                <x-add-yeast :ingredient="$ingredient"></x-add-yeast>
             </template>
             <div class="flex justify-end">
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Update Ingredient</button>

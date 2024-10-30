@@ -77,7 +77,7 @@ class IngredientController extends Controller
 
     public function destroy(Ingredients $ingredient)
     {
-        dd($ingredient);
+        // dd($ingredient);
         $ingredient->delete();
         return redirect()->route('ingredients.show');
     }
